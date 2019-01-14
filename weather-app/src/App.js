@@ -44,6 +44,7 @@ class App extends React.Component {
   }
 
   render() {
+    const { temperature, city, country, humidity, description, error } = this.state;
     return (
       <div>
         <div className="wrapper">
@@ -56,11 +57,11 @@ class App extends React.Component {
                 <div className="col-sm-7 form-container">
                   <Form getWeather={this.getWeather} />
                   <Weather
-                    temperature={this.state.temperature} city={this.state.city}
-                    country={this.state.country}
-                    humidity={this.state.humidity}
-                    description={this.state.description}
-                    error={this.state.error}
+                    temperature={temperature} city={city}
+                    country={country}
+                    humidity={humidity}
+                    description={description}
+                    error={error}
                   />
                 </div>
               </div>
@@ -71,6 +72,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;
